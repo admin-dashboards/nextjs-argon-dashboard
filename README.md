@@ -9,13 +9,31 @@ Start your development with a Dashboard for NextJ, Bootstrap, React and Reactstr
 
 | Status | Enhancement | info | 
 | --- | --- | --- |
-| ❌ | Authentication | Work in progress |
-| ❌ | Deployment | Work in progress |
-| ❌ | Dark Mode | Work in progress |
+| ❌ | `Authentication` | Work in progress |
+| ❌ | `Deployment` | Work in progress |
+| ❌ | `Dark Mode` | Work in progress |
 
 <br /> 
 
 ![Product Image](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/nextjs-argon-dashboard/nextjs-argon-dashboard.jpg)
+
+<br />
+
+## Authentication `enhancement`
+
+@Todo
+
+<br />
+
+## Deployemnt `enhancement`
+
+@Todo
+
+<br />
+
+## Dark-Mode `enhancement`
+
+@Todo
 
 <br />
 
