@@ -19,19 +19,19 @@ Start your development with a Dashboard for NextJ, Bootstrap, React and Reactstr
 
 <br />
 
-## Authentication `enhancement`
+## ✨ Authentication `enhancement`
 
 @Todo
 
 <br />
 
-## Deployemnt `enhancement`
+## ✨ Deployemnt `enhancement`
 
 @Todo
 
 <br />
 
-## Dark-Mode `enhancement`
+## ✨ Dark-Mode `enhancement`
 
 @Todo
 
