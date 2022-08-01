@@ -7,7 +7,7 @@ const options = {
   providers: [
     GithubProvider({
       clientId: "d59dc667e6c0308235f3",
-      clientSecret: "bbfe446a2cd2bfb52a33a86757ab2a4a38cc81ce",
+      clientSecret: "efbf1d02a2d51618efa40e0c685716d7593278f6",
     }),
     GoogleProvider({
       clientId:
