@@ -17,8 +17,12 @@ import {
   Container,
   Media,
 } from "reactstrap";
+import { signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 function AdminNavbar({ brandText }) {
+  const { data } = useSession();
+  const router = useRouter();
   return (
     <>
       <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
@@ -45,14 +49,11 @@ function AdminNavbar({ brandText }) {
               <DropdownToggle className="pr-0" nav>
                 <Media className="align-items-center">
                   <span className="avatar avatar-sm rounded-circle">
-                    <img
-                      alt="..."
-                      src={require("assets/img/theme/team-4-800x800.jpg")}
-                    />
+                    <img alt="..." src={data?.user?.image} />
                   </span>
                   <Media className="ml-2 d-none d-lg-block">
                     <span className="mb-0 text-sm font-weight-bold">
-                      Jessica Jones
+                      {data?.user?.name}
                     </span>
                   </Media>
                 </Media>
@@ -86,7 +87,14 @@ function AdminNavbar({ brandText }) {
                   </DropdownItem>
                 </Link>
                 <DropdownItem divider />
-                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                <DropdownItem
+                  href="#pablo"
+                  onClick={async (e) => {
+                    await router.push("/auth/login");
+                    signOut();
+                    e.preventDefault();
+                  }}
+                >
                   <i className="ni ni-user-run" />
                   <span>Logout</span>
                 </DropdownItem>

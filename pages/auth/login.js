@@ -17,6 +17,7 @@ import {
 } from "reactstrap";
 // layout for this page
 import Auth from "layouts/Auth.js";
+import { signIn } from "next-auth/react";
 
 function Login() {
   return (
@@ -32,7 +33,9 @@ function Login() {
                 className="btn-neutral btn-icon"
                 color="default"
                 href="#pablo"
-                onClick={(e) => e.preventDefault()}
+                onClick={() =>
+                  signIn("github", { callbackUrl: "/admin/dashboard" })
+                }
               >
                 <span className="btn-inner--icon">
                   <img
@@ -46,7 +49,9 @@ function Login() {
                 className="btn-neutral btn-icon"
                 color="default"
                 href="#pablo"
-                onClick={(e) => e.preventDefault()}
+                onClick={() =>
+                  signIn("google", { callbackUrl: "/admin/dashboard" })
+                }
               >
                 <span className="btn-inner--icon">
                   <img
