@@ -25,7 +25,7 @@ Start your development with a Dashboard for NextJ, Bootstrap, React and Reactstr
 
 <br />
 
-## ✨ Deployemnt `enhancement`
+## ✨ Deployment `enhancement`
 
 @Todo
 
