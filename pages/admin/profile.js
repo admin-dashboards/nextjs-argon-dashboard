@@ -17,8 +17,9 @@ import {
 import Admin from "layouts/Admin.js";
 // core components
 import UserHeader from "components/Headers/UserHeader.js";
-
+import { useSession } from "next-auth/react";
 function Profile() {
+  const { data } = useSession();
   return (
     <>
       <UserHeader />
@@ -34,7 +35,7 @@ function Profile() {
                       <img
                         alt="..."
                         className="rounded-circle"
-                        src={require("assets/img/theme/team-4-800x800.jpg")}
+                        src={data.user.image}
                       />
                     </a>
                   </div>
@@ -83,7 +84,7 @@ function Profile() {
                 </Row>
                 <div className="text-center">
                   <h3>
-                    Jessica Jones
+                    {data.user.name}
                     <span className="font-weight-light">, 27</span>
                   </h3>
                   <div className="h5 font-weight-300">
@@ -165,7 +166,7 @@ function Profile() {
                           <Input
                             className="form-control-alternative"
                             id="input-email"
-                            placeholder="jesse@example.com"
+                            placeholder={data.user.email}
                             type="email"
                           />
                         </FormGroup>
