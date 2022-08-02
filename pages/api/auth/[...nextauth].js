@@ -15,7 +15,7 @@ const options = {
       clientSecret: "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",
     }),
   ],
-  secret: process.env.NEXT_PUBLIC_SECRET,
+  secret: process.env.SECRET,
 };
 
 export default (req, res) => NextAuth(req, res, options);
