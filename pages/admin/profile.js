@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { THEME_CONTEXT } from "../../layouts/Admin";
 
 // reactstrap components
 import {
@@ -20,14 +21,19 @@ import UserHeader from "components/Headers/UserHeader.js";
 import { useSession } from "next-auth/react";
 function Profile() {
   const { data } = useSession();
+  const { theme } = useContext(THEME_CONTEXT);
   return (
     <>
       <UserHeader />
       {/* Page content */}
-      <Container className="mt--7" fluid>
+      <Container className={`mt--7 ${theme === "DARK" ? "bg-dark" : ""}`} fluid>
         <Row>
           <Col className="order-xl-2 mb-5 mb-xl-0" xl="4">
-            <Card className="card-profile shadow">
+            <Card
+              className={`card-profile shadow ${
+                theme === "DARK" ? "bg-dark" : ""
+              }`}
+            >
               <Row className="justify-content-center">
                 <Col className="order-lg-2" lg="3">
                   <div className="card-profile-image">
@@ -41,7 +47,11 @@ function Profile() {
                   </div>
                 </Col>
               </Row>
-              <CardHeader className="text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+              <CardHeader
+                className={`text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4 ${
+                  theme === "DARK" ? "bg-dark" : ""
+                }`}
+              >
                 <div className="d-flex justify-content-between">
                   <Button
                     className="mr-4"
@@ -82,16 +92,28 @@ function Profile() {
                     </div>
                   </div>
                 </Row>
-                <div className="text-center">
-                  <h3>
+                <div
+                  className={`text-center ${
+                    theme === "DARK" ? "text-light" : ""
+                  }`}
+                >
+                  <h3 className={`${theme === "DARK" ? "text-light" : ""}`}>
                     {data.user.name}
                     <span className="font-weight-light">, 27</span>
                   </h3>
-                  <div className="h5 font-weight-300">
+                  <div
+                    className={`h5 font-weight-300 ${
+                      theme === "DARK" ? "text-light" : ""
+                    }`}
+                  >
                     <i className="ni location_pin mr-2" />
                     Bucharest, Romania
                   </div>
-                  <div className="h5 mt-4">
+                  <div
+                    className={`h5 mt-4 ${
+                      theme === "DARK" ? "text-light" : ""
+                    }`}
+                  >
                     <i className="ni business_briefcase-24 mr-2" />
                     Solution Manager - Creative Tim Officer
                   </div>
@@ -113,11 +135,17 @@ function Profile() {
             </Card>
           </Col>
           <Col className="order-xl-1" xl="8">
-            <Card className="bg-secondary shadow">
-              <CardHeader className="bg-white border-0">
+            <Card className={`shadow ${theme === "DARK" ? "bg-dark" : ""}`}>
+              <CardHeader
+                className={`border-0 ${theme === "DARK" ? "bg-dark" : ""}`}
+              >
                 <Row className="align-items-center">
                   <Col xs="8">
-                    <h3 className="mb-0">My account</h3>
+                    <h3
+                      className={`mb-0 ${theme === "DARK" ? "text-white" : ""}`}
+                    >
+                      My account
+                    </h3>
                   </Col>
                   <Col className="text-right" xs="4">
                     <Button
