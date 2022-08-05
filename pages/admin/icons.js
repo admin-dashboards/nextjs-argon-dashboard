@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // react component that copies the given text inside your clipboard
 import { CopyToClipboard } from "react-copy-to-clipboard";
 // reactstrap components
@@ -15,20 +15,47 @@ import {
 import Admin from "layouts/Admin.js";
 // core components
 import Header from "components/Headers/Header.js";
-
+import { THEME_CONTEXT } from "../../layouts/Admin";
 const Icons = () => {
   const [copiedText, setCopiedText] = useState();
+  const { theme } = useContext(THEME_CONTEXT);
+  useEffect(() => {
+    if (theme === "DARK") {
+      document
+        .querySelectorAll(".btn-icon-clipboard")
+        .forEach((e) => e.classList.add("bg-dark"));
+      document
+        .querySelectorAll("i")
+        .forEach((e) => e.classList.add("text-white"));
+      document
+        .querySelectorAll("span")
+        .forEach((e) => e.classList.add("text-white"));
+    } else {
+      document
+        .querySelectorAll(".btn-icon-clipboard")
+        .forEach((e) => e.classList.remove("bg-dark"));
+      document
+        .querySelectorAll("i")
+        .forEach((e) => e.classList.remove("text-white"));
+      document
+        .querySelectorAll("span")
+        .forEach((e) => e.classList.remove("text-white"));
+    }
+  }, [theme]);
   return (
     <>
       <Header />
       {/* Page content */}
-      <Container className="mt--7" fluid>
+      <Container
+        className={`mt--7k ${theme === "DARK" ? "bg-dark" : ""}`}
+        fluid
+      >
         {/* Table */}
         <Row>
           <div className="col">
-            <Card className="shadow">
+            <Card className={`shadow ${theme === "DARK" ? "bg-dark" : ""}`}>
               <CardHeader className="bg-transparent">
-                <h3 className="mb-0">Icons</h3>
+                <h3 className="mb-0 text-white">Icons</h3>
               </CardHeader>
               <CardBody>
                 <Row className="icon-examples">
