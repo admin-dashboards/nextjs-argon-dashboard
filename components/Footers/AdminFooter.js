@@ -1,12 +1,14 @@
 /*eslint-disable*/
-import React from "react";
+import React, { useContext } from "react";
 
 // reactstrap components
-import { Container, Row, Col, Nav, NavItem, NavLink } from "reactstrap";
+import { Row, Col, Nav, NavItem, NavLink } from "reactstrap";
+import { THEME_CONTEXT } from "../../layouts/Admin";
 
 function Footer() {
+  const { theme } = useContext(THEME_CONTEXT);
   return (
-    <footer className="footer">
+    <footer className={`footer ${theme === "DARK" ? "bg-dark" : ""}`}>
       <Row className="align-items-center justify-content-xl-between">
         <Col xl="6">
           <div className="copyright text-center text-xl-left text-muted">

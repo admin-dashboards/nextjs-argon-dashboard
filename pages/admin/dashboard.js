@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 // node.js library that concatenates classes (strings)
 import classnames from "classnames";
 // javascipt plugin for creating charts
@@ -31,8 +31,9 @@ import {
 } from "variables/charts.js";
 
 import Header from "components/Headers/Header.js";
-
+import { THEME_CONTEXT } from "../../layouts/Admin";
 const Dashboard = (props) => {
+  const { theme } = useContext(THEME_CONTEXT);
   const [activeNav, setActiveNav] = React.useState(1);
   const [chartExample1Data, setChartExample1Data] = React.useState("data1");
   if (window.Chart) {
@@ -47,10 +48,14 @@ const Dashboard = (props) => {
   return (
     <>
       <Header />
-      <Container className="mt--7" fluid>
+      <Container
+        className={`mt--7 ${theme === "DARK" ? "bg-dark" : ""} `}
+        fluid
+      >
+        {/*here*/}
         <Row>
           <Col className="mb-5 mb-xl-0" xl="8">
-            <Card className="shadow">
+            <Card className={`shadow ${theme === "DARK" ? "bg-dark" : ""} `}>
               <CardHeader className="bg-transparent">
                 <Row className="align-items-center">
                   <div className="col">
@@ -103,14 +108,24 @@ const Dashboard = (props) => {
             </Card>
           </Col>
           <Col xl="4">
-            <Card className="shadow">
+            <Card className={`shadow ${theme === "DARK" ? "bg-dark" : ""} `}>
               <CardHeader className="bg-transparent">
                 <Row className="align-items-center">
                   <div className="col">
-                    <h6 className="text-uppercase text-muted ls-1 mb-1">
+                    <h6
+                      className={`text-uppercase ${
+                        theme === "DARK" ? "text-light" : ""
+                      }  ls-1 mb-1`}
+                    >
                       Performance
                     </h6>
-                    <h2 className="mb-0">Total orders</h2>
+                    <h2
+                      className={`mb-0 ${
+                        theme === "DARK" ? "text-white" : ""
+                      } `}
+                    >
+                      Total orders
+                    </h2>
                   </div>
                 </Row>
               </CardHeader>
@@ -128,11 +143,21 @@ const Dashboard = (props) => {
         </Row>
         <Row className="mt-5">
           <Col className="mb-5 mb-xl-0" xl="8">
-            <Card className="shadow">
-              <CardHeader className="border-0">
+            <Card className={`shadow ${theme === "DARK" ? "bg-dark" : ""} `}>
+              <CardHeader
+                className={`border-0 ${
+                  theme === "DARK" ? "bg-transparent" : ""
+                } bg-transparent`}
+              >
                 <Row className="align-items-center">
                   <div className="col">
-                    <h3 className="mb-0">Page visits</h3>
+                    <h3
+                      className={`mb-0 ${
+                        theme === "DARK" ? "text-light" : ""
+                      } `}
+                    >
+                      Page visits
+                    </h3>
                   </div>
                   <div className="col text-right">
                     <Button
@@ -146,8 +171,13 @@ const Dashboard = (props) => {
                   </div>
                 </Row>
               </CardHeader>
-              <Table className="align-items-center table-flush" responsive>
-                <thead className="thead-light">
+              <Table
+                className={`align-items-center table-flush ${
+                  theme === "DARK" ? "text-white" : ""
+                } text-white`}
+                responsive
+              >
+                <thead className={`${theme === "DARK" ? "bg-dark" : ""} `}>
                   <tr>
                     <th scope="col">Page name</th>
                     <th scope="col">Visitors</th>
@@ -204,11 +234,17 @@ const Dashboard = (props) => {
             </Card>
           </Col>
           <Col xl="4">
-            <Card className="shadow">
-              <CardHeader className="border-0">
+            <Card className={`shadow ${theme === "DARK" ? "bg-dark" : ""} `}>
+              <CardHeader
+                className={`border-0 ${theme === "DARK" ? "bg-dark" : ""} `}
+              >
                 <Row className="align-items-center">
                   <div className="col">
-                    <h3 className="mb-0">Social traffic</h3>
+                    <h3
+                      className={`mb-0 ${theme === "DARK" ? "text-light" : ""}`}
+                    >
+                      Social traffic
+                    </h3>
                   </div>
                   <div className="col text-right">
                     <Button
@@ -222,8 +258,13 @@ const Dashboard = (props) => {
                   </div>
                 </Row>
               </CardHeader>
-              <Table className="align-items-center table-flush" responsive>
-                <thead className="thead-light">
+              <Table
+                className={`align-items-center table-flush ${
+                  theme === "DARK" ? "text-white" : ""
+                }`}
+                responsive
+              >
+                <thead className={`${theme === "DARK" ? "thead-dark" : ""} `}>
                   <tr>
                     <th scope="col">Referral</th>
                     <th scope="col">Visitors</th>

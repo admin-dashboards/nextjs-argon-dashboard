@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 // reactstrap components
 import {
@@ -16,13 +16,16 @@ import {
   Nav,
   Container,
   Media,
+  CustomInput,
 } from "reactstrap";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { THEME_CONTEXT } from "../../layouts/Admin";
 
 function AdminNavbar({ brandText }) {
   const { data } = useSession();
   const router = useRouter();
+  const { theme, setTheme } = useContext(THEME_CONTEXT);
   return (
     <>
       <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
@@ -44,6 +47,24 @@ function AdminNavbar({ brandText }) {
               </InputGroup>
             </FormGroup>
           </Form>
+          <CustomInput
+            type="switch"
+            id="exampleCustomSwitch"
+            label="dark mode"
+            className="text-white"
+            checked={theme === "DARK"}
+            value={theme}
+            onClick={(e) => {
+              let temp;
+              if (e.target.checked) {
+                temp = "DARK";
+              } else {
+                temp = "LIGHT";
+              }
+              setTheme(temp);
+              localStorage.setItem("theme", temp);
+            }}
+          />
           <Nav className="align-items-center d-none d-md-flex" navbar>
             <UncontrolledDropdown nav>
               <DropdownToggle className="pr-0" nav>

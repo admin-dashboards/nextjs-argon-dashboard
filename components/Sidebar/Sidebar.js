@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 // nodejs library to set properties for components
@@ -35,6 +35,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import { THEME_CONTEXT } from "../../layouts/Admin";
 
 var ps;
 
@@ -42,6 +43,7 @@ function Sidebar(props) {
   // used for checking current route
   const router = useRouter();
   const [collapseOpen, setCollapseOpen] = React.useState(false);
+  const { theme } = useContext(THEME_CONTEXT);
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
     return router.route.indexOf(routeName) > -1;
@@ -81,7 +83,9 @@ function Sidebar(props) {
   );
   return (
     <Navbar
-      className="navbar-vertical fixed-left navbar-light bg-white"
+      className={`navbar-vertical fixed-left ${
+        theme === "DARK" ? "navbar-dark bg-dark" : ""
+      } `}
       expand="md"
       id="sidenav-main"
     >
@@ -244,7 +248,10 @@ function Sidebar(props) {
           </Nav>
           <Nav className="mb-md-3" navbar>
             <NavItem className="active-pro active">
-              <NavLink href="https://www.creative-tim.com/product/argon-dashboard-pro-react?ref=njsad-admin-sidebar">
+              <NavLink
+                className={theme === "DARK" && `bg-dark`}
+                href="https://www.creative-tim.com/product/argon-dashboard-pro-react?ref=njsad-admin-sidebar"
+              >
                 <i className="ni ni-spaceship" />
                 Upgrade to PRO
               </NavLink>

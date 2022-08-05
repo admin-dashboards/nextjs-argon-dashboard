@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // reactstrap components
 import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
+import { THEME_CONTEXT } from "../../layouts/Admin";
 
 function Header() {
+  const { theme } = useContext(THEME_CONTEXT);
   return (
     <>
       <div className="header bg-gradient-dark pb-8 pt-5 pt-md-8">
@@ -12,7 +14,11 @@ function Header() {
             {/* Card stats */}
             <Row>
               <Col lg="6" xl="3">
-                <Card className="card-stats mb-4 mb-xl-0">
+                <Card
+                  className={`card-stats mb-4 mb-xl-0 ${
+                    theme === "DARK" ? "bg-dark" : ""
+                  }`}
+                >
                   <CardBody>
                     <Row>
                       <div className="col">
@@ -22,7 +28,11 @@ function Header() {
                         >
                           Traffic
                         </CardTitle>
-                        <span className="h2 font-weight-bold mb-0">
+                        <span
+                          className={`h2 font-weight-bold mb-0 ${
+                            theme === "DARK" ? "text-white" : ""
+                          }`}
+                        >
                           350,897
                         </span>
                       </div>
@@ -42,7 +52,11 @@ function Header() {
                 </Card>
               </Col>
               <Col lg="6" xl="3">
-                <Card className="card-stats mb-4 mb-xl-0">
+                <Card
+                  className={`card-stats mb-4 mb-xl-0 ${
+                    theme === "DARK" ? "bg-dark" : ""
+                  }`}
+                >
                   <CardBody>
                     <Row>
                       <div className="col">
@@ -52,7 +66,13 @@ function Header() {
                         >
                           New users
                         </CardTitle>
-                        <span className="h2 font-weight-bold mb-0">2,356</span>
+                        <span
+                          className={`h2 font-weight-bold mb-0 ${
+                            theme === "DARK" ? "text-white" : ""
+                          }`}
+                        >
+                          2,356
+                        </span>
                       </div>
                       <Col className="col-auto">
                         <div className="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -70,7 +90,11 @@ function Header() {
                 </Card>
               </Col>
               <Col lg="6" xl="3">
-                <Card className="card-stats mb-4 mb-xl-0">
+                <Card
+                  className={`card-stats mb-4 mb-xl-0 ${
+                    theme === "DARK" ? "bg-dark" : ""
+                  }`}
+                >
                   <CardBody>
                     <Row>
                       <div className="col">
@@ -80,7 +104,13 @@ function Header() {
                         >
                           Sales
                         </CardTitle>
-                        <span className="h2 font-weight-bold mb-0">924</span>
+                        <span
+                          className={`h2 font-weight-bold mb-0 ${
+                            theme === "DARK" ? "text-white" : ""
+                          }`}
+                        >
+                          924
+                        </span>
                       </div>
                       <Col className="col-auto">
                         <div className="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -98,7 +128,11 @@ function Header() {
                 </Card>
               </Col>
               <Col lg="6" xl="3">
-                <Card className="card-stats mb-4 mb-xl-0">
+                <Card
+                  className={`card-stats mb-4 mb-xl-0 ${
+                    theme === "DARK" ? "bg-dark" : ""
+                  }`}
+                >
                   <CardBody>
                     <Row>
                       <div className="col">
@@ -108,7 +142,13 @@ function Header() {
                         >
                           Performance
                         </CardTitle>
-                        <span className="h2 font-weight-bold mb-0">49,65%</span>
+                        <span
+                          className={`h2 font-weight-bold mb-0 ${
+                            theme === "DARK" ? "text-white" : ""
+                          }`}
+                        >
+                          49,65%
+                        </span>
                       </div>
                       <Col className="col-auto">
                         <div className="icon icon-shape bg-info text-white rounded-circle shadow">
