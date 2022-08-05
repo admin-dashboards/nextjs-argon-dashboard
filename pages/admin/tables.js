@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // reactstrap components
 import {
@@ -24,22 +24,29 @@ import {
 import Admin from "layouts/Admin.js";
 // core components
 import Header from "components/Headers/Header.js";
+import { THEME_CONTEXT } from "../../layouts/Admin";
 
 function Tables() {
+  const { theme } = useContext(THEME_CONTEXT);
+
   return (
     <>
       <Header />
       {/* Page content */}
-      <Container className="mt--7" fluid>
+      <Container className={`mt--7 ${theme === "DARK" ? "bg-dark" : ""}`} fluid>
         {/* Table */}
         <Row>
           <div className="col">
-            <Card className="shadow">
-              <CardHeader className="border-0">
-                <h3 className="mb-0">Card tables</h3>
+            <Card className={`shadow ${theme === "DARK" ? "bg-dark" : ""}`}>
+              <CardHeader
+                className={`border-0 ${theme === "DARK" ? "bg-dark" : ""}`}
+              >
+                <h3 className={`mb-0 ${theme === "DARK" ? "text-white" : ""}`}>
+                  Card tables
+                </h3>
               </CardHeader>
               <Table className="align-items-center table-flush" responsive>
-                <thead className="thead-light">
+                <thead className={`${theme === "DARK" ? "thead-dark" : ""}`}>
                   <tr>
                     <th scope="col">Project</th>
                     <th scope="col">Budget</th>
@@ -800,7 +807,9 @@ function Tables() {
                   </tr>
                 </tbody>
               </Table>
-              <CardFooter className="py-4">
+              <CardFooter
+                className={`py-4 ${theme === "DARK" ? "bg-dark" : ""}`}
+              >
                 <nav aria-label="...">
                   <Pagination
                     className="pagination justify-content-end mb-0"
