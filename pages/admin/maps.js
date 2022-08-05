@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // reactstrap components
 import { Card, Container, Row } from "reactstrap";
@@ -6,6 +6,8 @@ import { Card, Container, Row } from "reactstrap";
 import Admin from "layouts/Admin.js";
 // core components
 import Header from "components/Headers/Header.js";
+import { THEME_CONTEXT } from "../../layouts/Admin";
+
 const MapWrapper = () => {
   const mapRef = React.useRef(null);
   React.useEffect(() => {
@@ -95,11 +97,12 @@ const MapWrapper = () => {
 };
 
 function Maps() {
+  const { theme } = useContext(THEME_CONTEXT);
   return (
     <>
       <Header />
       {/* Page content */}
-      <Container className="mt--7" fluid>
+      <Container className={`mt--7 ${theme === "DARK" ? "bg-dark" : ""}`} fluid>
         <Row>
           <div className="col">
             <Card className="shadow border-0">
