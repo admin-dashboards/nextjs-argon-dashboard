@@ -11,15 +11,23 @@ Start your development with a Dashboard for NextJ, Bootstrap, React and Reactstr
 
 <br />
 
+## Quick start
+
+@Todo - Add build steps here
+
+<br />
+
 ## ✨ Authentication
 
-Authentication is now available via github and google OAuth provided by next-auth.
+Authentication is now available via `Github` and `Google` OAuth provided by `next-auth`.
+
+@Todo - The OAuth setup should be explained to the users. 
 
 <br />
 
 ## ✨ Deployemnt
 
-A deployment of this demo is availavle [here](https://nextjs-argon-dashboard-alivarastepour.vercel.app/).
+@Todo - Add the necessary steps to deploy the project
 
 <br />
 
