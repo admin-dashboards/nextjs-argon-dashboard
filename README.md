@@ -7,33 +7,27 @@ Start your development with a Dashboard for NextJ, Bootstrap, React and Reactstr
 - 👉 [NextJS Argon Dashboard](https://www.creative-tim.com/product/nextjs-argon-dashboard?AFFILIATE=128200) - `product page`
 - 👉 [NextJS Argon Dashboard](https://demos.creative-tim.com/nextjs-argon-dashboard/admin/dashboard?AFFILIATE=128200) - `LIVE demo`
 
-| Status | Enhancement | info | 
-| --- | --- | --- |
-| ❌ | `Authentication` | Work in progress |
-| ❌ | `Deployment` | Work in progress |
-| ❌ | `Dark Mode` | Work in progress |
 
-<br /> 
 
 ![Product Image](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/nextjs-argon-dashboard/nextjs-argon-dashboard.jpg)
 
 <br />
 
-## ✨ Authentication `enhancement`
+## ✨ Authentication
 
-@Todo
-
-<br />
-
-## ✨ Deployemnt `enhancement`
-
-@Todo
+Authentication is now available via github and google OAuth provided by next-auth.
 
 <br />
 
-## ✨ Dark-Mode `enhancement`
+## ✨ Deployemnt
 
-@Todo
+A deployment of this demo is availavle [here](https://nextjs-argon-dashboard-alivarastepour.vercel.app/).
+
+<br />
+
+## ✨ Dark-Mode
+
+This demo contains a feature to change pages' theme. dark and light themes are available.
 
 <br />
 
