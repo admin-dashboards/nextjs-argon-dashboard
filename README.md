@@ -25,7 +25,7 @@ Authentication is now available via `Github` and `Google` OAuth provided by `nex
 
 <br />
 
-## ✨ Deployemnt
+## ✨ Deployment
 
 @Todo - Add the necessary steps to deploy the project
 
