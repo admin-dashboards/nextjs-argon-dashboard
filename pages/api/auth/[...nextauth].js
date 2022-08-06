@@ -6,13 +6,12 @@ import GoogleProvider from "next-auth/providers/google";
 const options = {
   providers: [
     GithubProvider({
-      clientId: "d59dc667e6c0308235f3",
-      clientSecret: "efbf1d02a2d51618efa40e0c685716d7593278f6",
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
     GoogleProvider({
-      clientId:
-        "92121706328-f8tkgvpsobp4a25b863pdb2se173tiig.apps.googleusercontent.com",
-      clientSecret: "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",
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
   secret: process.env.SECRET,
