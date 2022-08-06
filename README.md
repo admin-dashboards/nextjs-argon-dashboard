@@ -49,7 +49,7 @@ Every element has multiple states for colors, styles, hover, focus, that you can
 
 ## ✨ Documentation
 
-Learn how to use this starter by accessing [NextJS Argon Dashboard - DOCS](https://www.creative-tim.com/learning-lab/nextjs/overview/argon-dashboard?AFFILIATE=128200).
+Learn how to use this starter by accessing [Next JS Argon Dashboard - Documentation](https://www.creative-tim.com/learning-lab/nextjs/overview/argon-dashboard?AFFILIATE=128200).
 
 <br />
 
