@@ -43,9 +43,13 @@ NextJS Argon Dashboard is built with over 100 individual components, giving you 
 You will save a lot of time going from prototyping to full-functional code, because all elements are implemented. This Dashboard is coming with pre-built examples, so the development process is seamless, switching from our pages to the real website is very easy to be done.
 Every element has multiple states for colors, styles, hover, focus, that you can easily access and use.
 
+<br />
+
 ## Documentation
 
-The documentation for the Material Kit is hosted at our [website](https://www.creative-tim.com/learning-lab/nextjs/overview/argon-dashboard?AFFILIATE=128200).
+Learn how to use this starter by accessing [NextJS Argon Dashboard - DOCS](https://www.creative-tim.com/learning-lab/nextjs/overview/argon-dashboard?AFFILIATE=128200).
+
+<br />
 
 ## File Structure
 
@@ -157,6 +161,8 @@ NextJS Argon Dashboard
 
 ```
 
+<br />
+
 ## Licensing
 
 - @MIT -Copyright [Creative Tim](https://www.creative-tim.com/?AFFILIATE=128200)
@@ -164,4 +170,4 @@ NextJS Argon Dashboard
 <br />
 
 ---
-[NextJS Argon Dashboard](https://www.creative-tim.com/product/nextjs-argon-dashboard?AFFILIATE=128200) - Provided by [Admin Dashboards](https://www.admin-dashboards.com/)
+**[NextJS Argon Dashboard](https://www.creative-tim.com/product/nextjs-argon-dashboard?AFFILIATE=128200)** - Provided by [Admin Dashboards](https://www.admin-dashboards.com/)
