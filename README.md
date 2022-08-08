@@ -15,17 +15,15 @@ Start your development with a Dashboard for NextJ, Bootstrap, React and Reactstr
 
 ## ✨ Quick start
 
-to run the project on your device, make sure you have node environment(v14+) installed on it. clone the project via Git CLI or download the zip and then run the following commands in project root:
+To run the project on your device, make sure you have node environment(v14+) installed on it. 
+Clone the project via Git CLI or download the zip. 
 
 ```
-npm i
+$ npm i
+$ npm run dev
 ```
 
-```
-npm run dev
-```
-
-after that you can visit the demo at the mentioned URL in your console(usually it is http://localhost:3000).
+After that you can visit the demo at the mentioned URL in your console(usually it is http://localhost:3000).
 
 <br />
 
@@ -47,6 +45,14 @@ alternativley, if you are deploying the project, you should add the mentioned ke
 ```.env
 SECRET="WHAT_EVER"
 ```
+
+<br />
+
+> Note: The OAUth testing in local environments requires an HTTPS connection
+
+More Info: https://github.com/vercel/next.js/discussions/10935#discussioncomment-2236301
+
+https://github.com/cameronhunter/local-ssl-proxy
 
 <br />
 
